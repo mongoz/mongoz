@@ -23,4 +23,5 @@ def generate_randomN():
     number = random.randint(1, 1000)
     return number
 
+
 main()
