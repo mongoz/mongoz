@@ -8,18 +8,21 @@ import q_10_1 as d
 
 
 def golf_file():
-    file_output = open('golf.txt', 'w', encoding='utf-8')
+    try:
+        file_output = open('golf.txt', 'w', encoding='utf-8')
 
-    player_name = input('Введите имя игрока или 0 для выхода: ')
-    while player_name != "0":
-        file_output.write(f"{player_name}\t")
-
-        player_score = int(input(f'Введите результат для игрока {player_name}: '))
         player_name = input('Введите имя игрока или 0 для выхода: ')
+        while player_name != "0":
+            file_output.write(f"{player_name}\t")
 
-        file_output.write(f"{str(player_score)}\n")
-    file_output.close()
-    return file_output
+            player_score = int(input(f'Введите результат для игрока {player_name}: '))
+            player_name = input('Введите имя игрока или 0 для выхода: ')
+
+            file_output.write(f"{str(player_score)}\n")
+        file_output.close()
+        return file_output
+    except Exception as err:
+        print(err)
 
 
 def main():
