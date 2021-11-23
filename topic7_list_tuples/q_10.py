@@ -7,14 +7,14 @@ def main():
     search = input("Введите команду с большой буквы: ")
 
     # calculate the total winning
-    total_winning = CalculateTotalWinning(winners_list, search)
+    total_winning = total_victories(winners_list, search)
 
     # print the results.
     print()
     print("Команда:", search, "была победителем", total_winning, "раз.")
 
 
-def CalculateTotalWinning(winners_list, search):
+def total_victories(winners_list, search):
     total_winning = 0
 
     index = 0
