@@ -1,14 +1,24 @@
+"""
+Общий объем продаж. Разработайте программу,
+которая просит пользователя ввести
+продажи магазина за каждый день недели.
+Суммы должны быть сохранены в списке.
+Примените цикл,
+чтобы вычислить общий объем продаж за неделю и
+показать результат.
+"""
+
+
 def main():
     days = 7
     values = get_values(days)
-    # calculate_values(values)
 
 
 def get_values(days):
     total = 0
     my_list = []
     day = 1
-    while day <= days:
+    while day != days+1:
         values = int(input(f'Введите сумму продаж за {day}-й рабоч. день недели: '))
         my_list.append(values)
         day += 1

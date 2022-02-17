@@ -7,11 +7,11 @@ hotdogs = int(input('Введите количество хот-догов дл�
 number_hotdogs = peoples * hotdogs
 print('Общее количество хот-догов:', number_hotdogs)
 
-sausages_bag = number_hotdogs // SAUSAGES
+sausages_bag = number_hotdogs // SAUSAGES  # Количество упаковок для сосисок
 if number_hotdogs % SAUSAGES != 0:
     sausages_bag += 1
 
-buns_bag = number_hotdogs // BUNS
+buns_bag = number_hotdogs // BUNS  # Количество упаковок для булочек
 if number_hotdogs % BUNS != 0:
     buns_bag += 1
 
