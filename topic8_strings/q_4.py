@@ -1,4 +1,5 @@
 def main(text):
+    # morse dict
     morse_code = {'A': '.-', 'B': '-...',
                   'C': '-.-.', 'D': '-..', 'E': '.',
                   'F': '..-.', 'G': '--.', 'H': '....',
@@ -15,12 +16,15 @@ def main(text):
                   '?': '..--..', '/': '-..-.', '-': '-....-',
                   '(': '-.--.', ')': '-.--.-', ' ': ' '}
 
+    # накопитель для слов
     morse = ""
 
+    # поиск по ключу, чтобы накопить значение
     for x in text:
         morse += morse_code[x.upper()]
     return morse
 
 
+# исходный текст
 text = input('Convert to Morse: ')
 print(main(text))
