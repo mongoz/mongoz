@@ -22,4 +22,3 @@ for i in range(len(count)):
         frequent = i
 print('Самый частый символ в строковом значении: ',
       constants[frequent], '.', sep='')
-

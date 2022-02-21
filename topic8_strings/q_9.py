@@ -1,6 +1,6 @@
 def text_calc_V(text):
     VOW = 0
-
+# Гласные
     vowels = 'AEIOU'
 
     for i in text:
@@ -11,7 +11,7 @@ def text_calc_V(text):
 
 def text_calc_C(text):
     CONST = 0
-
+# Cогласные
     constants = 'BCDFGHJKLMNPQRSTVWXYZ'
 
     for i in text:
