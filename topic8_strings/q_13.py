@@ -16,7 +16,7 @@ def get_price_data(gas):
     gas_data = []  # Дата
     for i in range(len(gas)):
         value = gas[i].strip('\n').split(':')
-        print(value)
+        # print(value)
         gas_prices.append(float(value[1]))
         gas_data.append(value[0])
 
@@ -35,32 +35,30 @@ def get_years(data):
 
 
 def get_months(data):
-    print('Месяцы')
+    # print('Месяцы')
     gas_months = []
     for j in range(len(data)):
         gas_months.append(int(data[j].split('-')[0]))
-    print(gas_months)
+    # print(gas_months)
 
     return gas_months
 
 
-def get_yearly_average(prices, years, months):
-    # Cпособ.1 через юзера по индексу
-    total_prices = 0
-    total_month = 0
-    user_input = int(input("Показать среднюю цену за год: "))
-    while user_input != int(user_input):
-        print('Вы допустили ошибку')
-        user_input = int(input('Введи год правильно: '))
-    # Общая цена за год
-    t = 0
-    while years.index(user_input) == prices.index(years.index(user_input)]:
-        for i in prices:
-            total_prices += i
+# Цена за указанный год.
+def get_yearly_average(year, prices, years):
+    t = 0  # К-о упомянутых цен
+    total_prices = 0  # Количество цен за год определенный год.
+    for i in years:
+        if i == year:
             t += 1
-    print(f"Количество месяцев = {total_month}")
-    print(f"Общая цена = {total_prices}")
-    # print(f"Средняя цена за {user_input} год = {average_year}")
+    print(f"Количество цен за {year} год = {t}")  # К-о упомянутых цен
+    for k in range(t):
+        for j in range(len(prices)):
+            if j == years.index(year):  # тут проблема как подставить цену под год.
+                total_prices += prices[j]
+    print(f"Общая цена за {year} = {total_prices:.2f}")
+    average_year = total_prices / t
+    return average_year
 
 
 def main():
@@ -73,7 +71,9 @@ def main():
     # Месяцы
     months = get_months(data)
     # Cреднее за год
-    get_yearly_average(prices, years, months)
+    # get_yearly_average(prices, years)
+    for i in range(STARTING_YEAR, ENDING_YEAR + 1):
+        print(f"Средняя цена за {i} год = {get_yearly_average(i, prices, years):.2f}\n")
 
 
 main()
